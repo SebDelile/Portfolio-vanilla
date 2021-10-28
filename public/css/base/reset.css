@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: unset;
+  cursor: pointer;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+  color : inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+dialog {
+  border: none;
+  color: inherit;
+  background: unset;
+}
