@@ -1,5 +1,6 @@
 /*--utils--*/
 @import url("./utils/variables.css");
+@import url("./utils/keyframes.css");
 
 /*--base--*/
 @import url("./base/reset.css");

@@ -1,0 +1,121 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 6rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "name name"
+    "social-media lang-selection";
+  justify-items: flex-start;
+  align-items: center;
+  align-content: end;
+  gap: 0;
+  background : var(--color-primary);
+  color: var(--color-secondary);
+  box-shadow: 0 0 0.25rem 0.125rem rgba(0, 0, 0, 0.5);
+}
+
+.header__name {
+  grid-area: name;
+  font-size: 1.5rem;
+}
+
+.header__job {
+  display: none;
+  grid-area: job;
+  font-size: 1.25rem;
+  padding-left: 0.25rem;
+}
+
+.header__social-media__list {
+  grid-area: social-media;
+  position: relative;
+  right: 1rem;
+}
+
+.header__social-media__link {
+  display: inline-block;
+  position: relative;
+  height: 3.5rem;
+  width: 3.5rem;
+  padding: 1rem;
+  outline: none;
+}
+
+.header__social-media__icon {
+  max-width: 100%;
+  max-height: 100%;
+  transform: scale(1);
+  transition: transform 0.4s;
+}
+
+.header__social-media__link:hover > .header__social-media__icon,
+.header__social-media__link:focus > .header__social-media__icon {
+  transform: scale(1.25);
+}
+
+.header__social-media__link:hover::after,
+.header__social-media__link:focus::after,
+.header__social-media__link:hover::before,
+.header__social-media__link:focus::before {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  animation: infobulle-appears 0s 0.4s both;
+}
+
+.header__social-media__link:hover::after,
+.header__social-media__link:focus::after {
+  content: attr(aria-label);
+  transform: translate(-25%);
+  z-index: 1;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-secondary);
+  color: black;
+  box-shadow: 0 0 0.125rem black;
+}
+
+.header__social-media__link:hover::before,
+.header__social-media__link:focus::before {
+  content: '';
+  transform: translate(-50%, calc(-100% + 1px));
+  z-index: 2;
+  border-right : 0.5rem solid transparent;
+  border-bottom : 0.6rem solid var(--color-secondary);
+  border-left : 0.5rem solid transparent;
+}
+
+.header__lang-selection {
+  grid-area: lang-selection
+}
+
+@media only screen and (min-width: 30rem) {
+  .header {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "name job job"
+      "social-media social-media lang-selection";
+  }
+
+  .header__job {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  .header {
+    height: 4rem;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "name job social-media lang-selection";
+    align-content: center;
+  }
+}

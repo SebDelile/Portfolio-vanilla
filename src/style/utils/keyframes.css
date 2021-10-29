@@ -1,0 +1,4 @@
+@keyframes infobulle-appears {
+  from {opacity: 0}
+  to {opacity: 1}
+}
