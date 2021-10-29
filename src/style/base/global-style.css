@@ -21,7 +21,7 @@ body{
 }
 @media only screen and (min-width: 20rem) {
   .main-padding {
-    padding: 0 calc(1rem - (100vw - 100%)) 0 5%; /*(100vw-100%) on the padding-rigth allows the content to remain centred even in the presence of Y-scroolbar*/
+    padding: 0 calc(5% - (100vw - 100%)) 0 5%; /*(100vw-100%) on the padding-rigth allows the content to remain centred even in the presence of Y-scroolbar*/
   }
 }
 @media only screen and (min-width: 90rem) {
