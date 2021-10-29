@@ -1,4 +1,4 @@
-import { socialMediaData } from "../data/socialMediaData.js";
+import { SocialMedia } from './socialMedia.js';
 
 const langs = ['fr','en'];
 
@@ -10,22 +10,8 @@ export const Header = () => {
   const job = document.createElement('p');
   job.textContent = '− développeur react.js';
   job.classList.add('header__job');
-  const socialIconList = document.createElement('div');
-  socialIconList.classList.add('header__social-media__list');
-  socialMediaData.forEach(media => {
-    const link = document.createElement('a');
-    link.classList.add('header__social-media__link');
-    link.href = media.url;
-    link.ariaLabel = media.infobulle;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    const icon = document.createElement('img');
-    icon.classList.add('header__social-media__icon');
-    icon.src = media.icon;
-    icon.alt = media.name + ' icon';
-    link.appendChild(icon);
-    socialIconList.appendChild(link);
-  });
+  const socialMedia = SocialMedia();
+  socialMedia.classList.add('header__social-media');
   const langSelection = document.createElement('select');
   langSelection.classList.add('header__lang-selection')
   langSelection.ariaLabel = 'Sélection de la langue';
@@ -37,6 +23,6 @@ export const Header = () => {
   })
   header.appendChild(name);
   header.appendChild(job);
-  header.appendChild(socialIconList);
+  header.appendChild(socialMedia);
   header.appendChild(langSelection);
 }
